@@ -16,6 +16,7 @@
                             │▒┌──┘▒▒▒│
                             └┐▒▒▒▒▒▒┌┘
                              └┐▒▒▒▒┌
+
  -->
 <head>
     <meta charset="utf-8">
@@ -28,16 +29,17 @@
 
 <body class="body">
     <div id="header" class="sticky">
-        <div class="dropmenu">
-            <img class="menu" src="_images/list.svg" width="45px">
-                <ul class="dropmenu-items">
-                <li>Home</li>
-                <li>Projects</li>
-                <li>Other Works</li>
-                <li>About</li>
-            </ul>
+        <div id="menu">
+            <div class="menu-btn">
+                <img src="_images/list.svg" width="45px">
+            </div>
+            <div class="menu-content">
+                <a href="#">Home</a>
+                <a href="#">Projects</a>
+                <a href="#">Other Works</a>
+                <a href="#">About</a>   
+            </div>
         </div>
-        
         <nav>
             <ul class="nav-list">
                 <li class="page-selected"><a class="page-link-selected" link href="index.html">Home</a></li>
@@ -46,15 +48,29 @@
                 <li class="page"><a class="page-link" link href="About/index.html">About</a></li>
             </ul>
         </nav>
-        <img class="logo" src="_images/mograph.svg" width="45px">
-        <!-- <a class="contact" href="#">Contact</a> -->
-        <!-- <div class="profile"></div> -->
+        <!-- <img class="logo" src="_images/mograph.svg" width="45px"> -->
+        <div class="profile">
+            <div class="profile-frame">
+                <img class="profile-img" src="_images/pp.jpeg">
+            </div>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/adamrburns88/">LinkedIn</a>
+                <a href="https://www.instagram.com/adam_burns88/">Instagram</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+
     </div>
-    <div class="carousel">
+    <!-- <div class="carousel">
         <div class="carousel-item">Content 1</div>
         <div class="carousel-item">Content 2</div>
         <div class="carousel-item">Content 3</div>
+    </div> -->
+
+    <div id="background">
+        <img src="_images/tempbkg.webp">
     </div>
+
     <script src="main.js"></script>
     <p class="fillertext">
         The unanimous Declaration of the thirteen united States of America, When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.
