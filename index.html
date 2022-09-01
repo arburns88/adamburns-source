@@ -20,15 +20,14 @@
  -->
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="_css/custom.css">
+    <link rel="icon" href="_images/mograph.svg">
+    <link rel="stylesheet" type="text/css" href="_css/main.css">
     <script src="_js/main.js"></script>
     <!-- linkedin card -->
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
-    <title>Adam Burns Portfolio</title>
+    <title>adamburns.dev</title>
 </head>
-
-<!-- onload="init()" -->
 
 <body class="body">
     <div id="header" class="sticky">
@@ -37,18 +36,21 @@
                 <img onclick="toggleShow('menu-content')" src="_images/list.svg" width="45px" style="filter: invert(93%) sepia(0%) saturate(7500%) hue-rotate(322deg) brightness(107%) contrast(105%);"> <!-- filter from Manish Menaria on stack -->
             </div>
             <div id="menu-content" class="hide">
-                <a href="#">Home</a>
-                <a href="#">Projects</a>
-                <a href="#">Other Works</a>
-                <a href="#">About</a>
+                <a href="index.html">Home</a>
+                    <!-- <div class="menu-line"></div> -->
+                <a href="Projects/index.html">Projects</a>
+                    <!-- <div class="menu-line"></div> -->
+                <a href="About/index.html">About</a>
+                    <!-- <div class="menu-line"></div> -->
+                <a href="Resume/index.html">Resume</a>
             </div>
         </div>
-        <nav>
+        <nav id="header-nav">
             <ul class="nav-list">
                 <li class="page-selected"><a class="page-link-selected" link href="index.html">Home</a></li>
                 <li class="page"><a class="page-link" link href="Projects/index.html">Projects</a></li>
-                <li class="page"><a class="page-link" link href="Other-Works/index.html">Other Works</a></li>
                 <li class="page"><a class="page-link" link href="About/index.html">About</a></li>
+                <li class="page"><a class="page-link" link href="Resume/index.html">Resume</a></li>
             </ul>
         </nav>
         <!-- <img class="logo" src="_images/mograph.svg" width="45px"> -->
@@ -58,14 +60,18 @@
             </div>
             <div id="socials" class="hide">
                 <a href="https://www.linkedin.com/in/adamrburns88/"> <img src="_images/linkedin.svg" style="width:12px; height:12px"> LinkedIn </a>
+                    <!-- <div class="menu-line"></div> -->
                 <a href="https://www.instagram.com/adam_burns88/"> <img src="_images/instagram.svg" style="width:12px; height:12px"> Instagram</a>
-                <a href="#"> <img src="_images/facebook.svg" style="width:12px; height:12px"> Facebook</a>
+                    <!-- <div class="menu-line"></div> -->
+                <a href="https://github.com/arburns88"> <img src="_images/github.svg" style="width:12px; height:12px"> GitHub</a>
             </div>
         </div>
     </div>
 
     <div id="left-card">
-        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="adamrburns88" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/adamrburns88?trk=profile-badge"></a></div>
+        <!-- data theme to change between light and dark -->
+        <div id="linkedin-card" class="badge-base LI-profile-badge show" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="adamrburns88" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/adamrburns88?trk=profile-badge"></a></div>
+        <div id="lcb" class="left-card-button left-card-active"><img class="filter" id="lcb-img" onclick="toggleShow('linkedin-card')" src="_images/chevron-compact-left.svg" style="width:50px; height:75px;"></div>     
     </div>
 
     <!-- <div class="carousel">
@@ -79,11 +85,35 @@
         <img src="_images/tempbgk.jpg" style="max-width:100%; height:auto;opacity: 0;">
     </div>
 
-    <div id="tabs">
-
-    </div>
-
-    <div class="fillertext">
+    <div id="main">
+        <div id="cards">
+            <div id="projects-card" class="card">
+                <div class="thumbnail">
+                    <div id="projects-card-spaceinvaders"></div>
+                    <div id="projects-card-rockpaperscissors"></div>
+                </div>
+                <h1 class="cards-text">Projects</h1>
+                <p class="cards-text">Check out some of my many projects...</p>
+                <button href="/Projects/index.html">more</button>
+            </div>
+            <div id="about-card" class="card">
+                <div class="thumbnail">
+                    <div id="about-card-thumbnail"></div>
+                </div>
+                <h1 class="cards-text">About</h1>
+                <p class="cards-text">Learn more about me...</p>
+                <button href="/Projects/index.html">more</button>
+            </div>
+            <div id="resume-card" class="card">
+                <div class="thumbnail">
+                    <div id="resume-card-thumbnail"></div>
+                </div>
+                <h1 class="cards-text">Resume</h1>
+                <p class="cards-text">Find my resume here...</p>
+                <button href="/Projects/index.html">more</button>
+            </div>
+        </div>
+        <div class="fillertext">
     <p>
         The unanimous Declaration of the thirteen united States of America, When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.
 
@@ -150,9 +180,8 @@ Nor have We been wanting in attentions to our Brittish brethren. We have warned 
 We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.
     </p>
     </div>
+    </div>
 
-
-    
     <div id="footer">
         <div id="footer-line"></div>
         <div id="footer-content">
@@ -160,14 +189,13 @@ We, therefore, the Representatives of the united States of America, in General C
                 <img class="logo" src="_images/mograph.svg" width="45px">
             </div>
             <div class="rightfoot">
-                <img src="_images/linkedin.svg" style="width:45px; height:45px">
-                <img src="_images/instagram.svg" style="width:45px; height:45px">
-                <img src="_images/facebook.svg" style="width:45px; height:45px">
+                <a href="https://www.linkedin.com/in/adamrburns88/"><img src="_images/linkedin.svg" style="width:45px; height:45px"></a>
+                <a href="https://www.instagram.com/adam_burns88/"><img src="_images/instagram.svg" style="width:45px; height:45px"></a>
+                <a href="https://github.com/arburns88"><img src="_images/github.svg" style="width:45px; height:45px"></a>
             </div>
         </div>
         
     </div>
-    
 
 </body>
 
