@@ -1,5 +1,9 @@
 // *****WORK ON DROPDOWNS/CARDS*****
 
+
+let width = window.innerWidth
+// pauses onclick functions while modal is up
+let modal = true;
 // hides console logs by default to reduce terminal clutter for normal users
 let showLogs = true;
 // arguments for closing pop outs
@@ -19,6 +23,13 @@ function cLog(tag, message) {
     }
 }
 
+// mobile funcitonality alert
+function mobileAlert(){
+    if(width < 1000){
+        alert('We detected that you are likely on a mobile device. This website is not currently mobile friendly, however it is still functional');
+    }
+}
+
 // runs on window load
 window.onbeforeunload = function () {
     // sets page to top
@@ -26,6 +37,7 @@ window.onbeforeunload = function () {
 }
 
 window.onload = function () {
+    mobileAlert();
     setTimeout(() =>{
         cLog('Onload', ('lcNotClosed: ' + lcNotClosed));
         if (lcNotClosed) {
@@ -106,12 +118,17 @@ function toggleCard(){
 
 
 window.onclick = function(){
-    // can be for looped with arrays but havent worked on yet       **needs revision**
-    hide(canHideMenu, 'menu-content');
-    hide(canHideSocials, 'socials');
-    hide(canHideLinkedInCard, 'linkedin-card');
-    toggleCard();
-    cLog('OnClick', ('leftCardActive: ' + leftCardActive));
+    if (!modal){
+        // can be for looped with arrays but havent worked on yet       **needs revision**
+        hide(canHideMenu, 'menu-content');
+        hide(canHideSocials, 'socials');
+        hide(canHideLinkedInCard, 'linkedin-card');
+        toggleCard();
+        cLog('OnClick', ('leftCardActive: ' + leftCardActive));
+    }
+    if (modal){
+        modal = false;
+    }
 }
 
 /*      INACTIVE CODE
